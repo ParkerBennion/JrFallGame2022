@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Backdrop
+    uniqueID: 1982457067
+    locked: 0
+  - name: Reticle
+    uniqueID: 1264137777
+    locked: 0
+  - name: PlayerLevel
+    uniqueID: 4032859545
+    locked: 0

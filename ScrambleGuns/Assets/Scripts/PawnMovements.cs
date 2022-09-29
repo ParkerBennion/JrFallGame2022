@@ -1,38 +1,83 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PawnMovements : MonoBehaviour
 {
     public SO_MovementParms PawnAttributesSO;
-    public Rigidbody2D rb;
+    public Rigidbody rb;
 
-    public PlayerControlls playerControls;
-    Vector2 moveDirection = Vector2.zero;
-    private InputAction move;
+    private WaitForFixedUpdate waitFixed;
 
-    private void Awake()
+    private bool moveTrue;
+    private bool jumpTrue = true;
+
+    private void Start()
     {
-        playerControls = new PlayerControlls();
     }
 
-    private void OnEnable()
+    public void MovePositoinLeft(InputAction.CallbackContext context)
     {
-        move = playerControls.Basic.Move;
-        move.Enable();
+        if (context.performed)
+        {
+            moveTrue = true;
+            StartCoroutine(MoveLeft());
+        }
+        if (context.canceled)
+        {
+            moveTrue = false;
+        }
+        
+    }
+    public void MovePositoinRight(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            moveTrue = true;
+            StartCoroutine(MoveRight());
+        }
+        if (context.canceled)
+        {
+            moveTrue = false;
+        }
+        
     }
 
-    private void OnDisable()
+    public void Jump(InputAction.CallbackContext context)
     {
-        move.Disable();
+        if (context.performed && jumpTrue)
+        {
+            jumpTrue = false;
+            StartCoroutine(MoveJump());
+        }
     }
 
-    private void Update()
+    
+    private IEnumerator MoveLeft()
     {
-        moveDirection = move.ReadValue<Vector2>();
+        while (moveTrue)
+        {
+            rb.MovePosition(transform.position + Vector3.left * (PawnAttributesSO.speed * Time.deltaTime));
+            yield return waitFixed;
+        }
     }
 
-    private void FixedUpdate()
+    private IEnumerator MoveRight()
     {
-        rb.velocity = new Vector2(moveDirection.x * (PawnAttributesSO.speed)*-1, moveDirection.y * PawnAttributesSO.speed);
+        while (moveTrue)
+        {
+            rb.MovePosition(transform.position + Vector3.right * (PawnAttributesSO.speed * Time.deltaTime));
+            yield return waitFixed;
+        }
+    }
+    
+    private IEnumerator MoveJump()
+    {
+        
+        Debug.Log("jumped");
+        yield return new WaitForSeconds(2f);
+        jumpTrue = true;
+        
     }
 }

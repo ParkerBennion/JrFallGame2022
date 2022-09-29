@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d4c4b0aa957bf4c9e24a8ebbb787c3, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: bbdee1819ac315845963486367b0d8be, type: 3}
+  m_Name: TargetPosition
   m_EditorClassIdentifier: 
-  speed: 5
-  isPlayer: 1
-  isActive: 1
-  canShoot: 0
-  canJump: 0
-  bulletFab: {fileID: 6471584809109050426, guid: d948361b5080db840bea7c0f64749cbc, type: 3}
-  fireRate: 0.3
+  position: {x: 0, y: 0, z: 0}
