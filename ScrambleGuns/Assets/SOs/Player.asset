@@ -18,4 +18,4 @@ MonoBehaviour:
   canShoot: 0
   canJump: 0
   bulletFab: {fileID: 6471584809109050426, guid: d948361b5080db840bea7c0f64749cbc, type: 3}
-  fireRate: 0.3
+  fireRate: 0.1
