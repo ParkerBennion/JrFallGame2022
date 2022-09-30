@@ -1,20 +1,20 @@
-using System;
-using System.Collections;
 using UnityEngine;
-
-public class PlayersBullet : MonoBehaviour
+using System.Collections;
+public class BulletBasic : MonoBehaviour
 {
     public SO_Vector3 startPosition;
     public SO_Vector3 endPosition;
 
     private Rigidbody2D rb;
+    private WaitForSeconds half;
 
     private void Awake()
     {
         transform.position = startPosition.position;
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log(endPosition.position);
-        Debug.Log(startPosition.position);
+        half = new WaitForSeconds(.5f);
+        //Debug.Log(endPosition.position);
+        //Debug.Log(startPosition.position);
     }
 
     private void Start()
@@ -31,7 +31,7 @@ public class PlayersBullet : MonoBehaviour
 
     private IEnumerator destruct()
     {
-        yield return new WaitForSeconds(1);
+        yield return half;
         Destroy(gameObject);
     }
 }

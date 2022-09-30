@@ -44,9 +44,21 @@ TagManager:
   - name: Backdrop
     uniqueID: 1982457067
     locked: 0
+  - name: EnemyBack
+    uniqueID: 3340833847
+    locked: 0
+  - name: EnemyMid
+    uniqueID: 2040260215
+    locked: 0
+  - name: EnemyFront
+    uniqueID: 3536512229
+    locked: 0
   - name: Reticle
     uniqueID: 1264137777
     locked: 0
   - name: PlayerLevel
     uniqueID: 4032859545
+    locked: 0
+  - name: EnemyPlayerLevel
+    uniqueID: 4179570535
     locked: 0
