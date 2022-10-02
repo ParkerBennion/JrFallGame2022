@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -27,8 +26,9 @@ public class TrackPosition : MonoBehaviour
         {
             currentPosition.position = transform.position;
             yield return wffu;
-            Debug.Log("tracking");
+            //Debug.Log("tracking");
         }
         
     }
+
 }

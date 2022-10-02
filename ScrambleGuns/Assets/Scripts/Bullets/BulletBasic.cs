@@ -5,13 +5,13 @@ public class BulletBasic : MonoBehaviour
     public SO_Vector3 startPosition;
     public SO_Vector3 endPosition;
 
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     private WaitForSeconds half;
 
     private void Awake()
     {
         transform.position = startPosition.position;
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         half = new WaitForSeconds(.5f);
         //Debug.Log(endPosition.position);
         //Debug.Log(startPosition.position);
