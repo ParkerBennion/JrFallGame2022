@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 1329622441}
   - component: {fileID: 1329622446}
   - component: {fileID: 1329622447}
+  - component: {fileID: 1329622448}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -988,7 +989,8 @@ MonoBehaviour:
   - {fileID: 108458011}
   - {fileID: 1665934438}
   - {fileID: 747609758}
-  enemyPrefab: {fileID: 1316107811980915881, guid: 81f2d535b2ed73541851e06c9b98c82b, type: 3}
+  enemyPrefab:
+  - {fileID: 1316107811980915881, guid: 81f2d535b2ed73541851e06c9b98c82b, type: 3}
 --- !u!1 &1107517158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1386,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PawnAttributesSO: {fileID: 11400000, guid: 70850476751da1b429a32c7ab19e7c18, type: 2}
   rb: {fileID: 0}
+--- !u!114 &1329622448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115757375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ede46f8c0302e4998bd1f493135144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerOB: {fileID: 11400000, guid: 8702289ff66f04c448d517d21c8f52d7, type: 2}
+  onRaiseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1329622445}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CallActionWorks
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1346324081
 GameObject:
   m_ObjectHideFlags: 3
@@ -1547,7 +1577,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7773513, y: 1}
+    m_SensorSize: {x: 1.5995829, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
