@@ -31,38 +31,11 @@ public class WaveManager : MonoBehaviour
              //Debug.Log(locations[i]);
          }
 
-         //StartCoroutine(TestingAllSpawns());
+         StartCoroutine(TestingAllSpawns());
          StartCoroutine(SpawnOneSequence());
      }
-
-     IEnumerator TestingAllSpawns()
-     {
-         for (int i = 0; i < spawnPositions.Length; i++)
-         {
-             enemyPrefab[0].transform.position = locations[i];
-             Instantiate(enemyPrefab[0]);
-         }
-      
-         yield break;
-     }
-
-     IEnumerator SpawnOneSequence()
-     {
-         bool SequenceGo = true;
-         
-         
-         while (SequenceGo)
-         {
-             
-             yield return TimerLong;
-             SwitchSpawnSequence();
-             switcher += 1;
-
-         }
-
-         
-     }
-
+     
+     
      public void SwitchSpawnSequence()
      {
          
@@ -72,43 +45,72 @@ public class WaveManager : MonoBehaviour
              {
                  enemyPrefab[0].transform.position = locations[0];
                  Instantiate(enemyPrefab[0]);
-                 Debug.Log("1");
+                 //Debug.Log("1");
                  break;
              }
              case 2:
              {
-                 enemyPrefab[0].transform.position = locations[1];
-                 Instantiate(enemyPrefab[0]);
-                 Debug.Log("2");
+                 enemyPrefab[1].transform.position = locations[1];
+                 Instantiate(enemyPrefab[1]);
+                 //Debug.Log("2");
                  break;
              }
              case 3:
              {
-                 enemyPrefab[0].transform.position = locations[2];
-                 Instantiate(enemyPrefab[0]);
-                 enemyPrefab[0].transform.position = locations[3];
-                 Instantiate(enemyPrefab[0]);
-                 Debug.Log("3");
+                 enemyPrefab[2].transform.position = locations[2];
+                 Instantiate(enemyPrefab[2]);
+                 enemyPrefab[3].transform.position = locations[3];
+                 Instantiate(enemyPrefab[3]);
+                 //Debug.Log("3");
                  break;
              }
              case 4:
              {
                  StartCoroutine(TestingAllSpawns());
-                 Debug.Log("4");
+                 //Debug.Log("4");
                  break;
              }
              case 5:
              {
                  
-                 Debug.Log("5");
+                 //Debug.Log("5");
                  break;
              }
              default:
              {
-                 Debug.Log("break");
+                 //Debug.Log("break");
                  switcher = 0;
                  break;
              }
          }
      }
+     
+
+     IEnumerator TestingAllSpawns()
+     {
+         for (int i = 0; i < spawnPositions.Length; i++)
+         {
+             enemyPrefab[i].transform.position = locations[i];
+             Instantiate(enemyPrefab[i]);
+         }
+      
+         yield break;
+     }
+
+
+     IEnumerator SpawnOneSequence()
+     {
+         bool SequenceGo = true;
+         while (SequenceGo)
+         {
+
+             yield return TimerLong;
+             SwitchSpawnSequence();
+             switcher += 1;
+
+         }
+
+
+     }
+
 }

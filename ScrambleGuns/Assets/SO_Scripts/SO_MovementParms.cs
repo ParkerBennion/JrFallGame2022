@@ -11,3 +11,4 @@ public class SO_MovementParms : ScriptableObject
     public GameObject bulletFab;
     public float fireRate;
 }
+

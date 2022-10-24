@@ -11,7 +11,7 @@ public class MasterCallerAction : MonoBehaviour
         ListenerOB.raise += Raise;
     }
 
-    private void Raise()
+    public void Raise()
     {
         onRaiseEvent.Invoke();
     }

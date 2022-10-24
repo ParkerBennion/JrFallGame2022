@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerBullet
+  - StopPoint
+  - Cover
   layers:
   - Default
   - TransparentFX
@@ -48,18 +50,27 @@ TagManager:
   - name: EnemyBack
     uniqueID: 3340833847
     locked: 0
+  - name: EnemyBackCover
+    uniqueID: 3261416137
+    locked: 0
   - name: EnemyMid
     uniqueID: 2040260215
+    locked: 0
+  - name: EnemyMidCover
+    uniqueID: 431421359
     locked: 0
   - name: EnemyFront
     uniqueID: 3536512229
     locked: 0
+  - name: EnemyFrontCover
+    uniqueID: 1053347609
+    locked: 0
   - name: Reticle
     uniqueID: 1264137777
     locked: 0
-  - name: PlayerLevel
-    uniqueID: 4032859545
-    locked: 0
   - name: EnemyPlayerLevel
     uniqueID: 4179570535
+    locked: 0
+  - name: PlayerLevel
+    uniqueID: 4032859545
     locked: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1316107811980915885}
   - component: {fileID: 5009091799738508550}
   m_Layer: 0
-  m_Name: DUMMY
+  m_Name: DUMMY Back
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316107811980915881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8899994, y: -1.48, z: 10}
-  m_LocalScale: {x: 0.39, y: 0.54, z: 0.54}
+  m_LocalPosition: {x: -4.8899994, y: -0.4, z: 10}
+  m_LocalScale: {x: 0.3, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,11 +74,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2040260215
-  m_SortingLayer: 4
+  m_SortingLayerID: -954133449
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
-  m_Color: {r: 0.55925226, g: 1, b: 0.5424528, a: 1}
+  m_Color: {r: 0.5411765, g: 0.8021984, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   theseTags:
   - Cover
   - Finish
+  - Respawn
   canBeShot: 0
 --- !u!54 &1316107811980915874
 Rigidbody:
