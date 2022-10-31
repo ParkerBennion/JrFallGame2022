@@ -72,8 +72,7 @@ public class WaveManager : MonoBehaviour
              }
              case 5:
              {
-                 
-                 //Debug.Log("5");
+                 //StartCoroutine(SpawnOnlyFront());
                  break;
              }
              default:
@@ -96,6 +95,18 @@ public class WaveManager : MonoBehaviour
       
          yield break;
      }
+     IEnumerator SpawnOnlyFront()
+     {
+         while (true)
+         {
+             enemyPrefab[0].transform.position = locations[0];
+             Instantiate(enemyPrefab[0]);
+             yield return TimerShort;
+         }
+      
+         yield break;
+     }
+     
 
 
      IEnumerator SpawnOneSequence()

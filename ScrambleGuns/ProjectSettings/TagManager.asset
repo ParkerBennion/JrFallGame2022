@@ -7,6 +7,9 @@ TagManager:
   - PlayerBullet
   - StopPoint
   - Cover
+  - Stopper
+  - EdgeStopper
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -73,4 +76,7 @@ TagManager:
     locked: 0
   - name: PlayerLevel
     uniqueID: 4032859545
+    locked: 0
+  - name: Foreground
+    uniqueID: 3094161323
     locked: 0

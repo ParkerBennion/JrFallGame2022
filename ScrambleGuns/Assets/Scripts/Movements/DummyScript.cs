@@ -1,30 +1,31 @@
 using System;
 using System.Collections;
-using UnityEditor.UIElements;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider))]
 public class DummyScript : MonoBehaviour
 {
     public bool timer = true;
-    public bool leftRight = false;
+    public bool leftRight = true;
     private WaitForFixedUpdate wffu;
     public GameObject Bullet;
     public EnemyStat_SO stats;
     public BoxCollider thisCollider;
     public string[] theseTags;
+    public string stopperName;
     private bool ammunition = true;
+    public UnityEvent OnDeath;
 
 
     public bool canBeShot = true;
 
     void Start()
     {
-        StartCoroutine(moveDummy());
-        StartCoroutine(Timer());
+        //StartCoroutine(moveDummy());
+        //StartCoroutine(Timer());
+        StartCoroutine(moveDummyRight());
         thisCollider = GetComponent<BoxCollider>();
-        StartCoroutine(StartShooting());
     }
 
     IEnumerator moveDummy()
@@ -43,6 +44,26 @@ public class DummyScript : MonoBehaviour
         if (timer)
         {
             StartCoroutine(moveDummy());
+        }
+    }
+    
+    IEnumerator moveDummyLeft()
+    {
+        leftRight = true;
+        while (leftRight)
+        {
+            transform.Translate(Vector3.left * (Time.deltaTime * 3));
+            yield return wffu;
+        }
+    }
+    
+    IEnumerator moveDummyRight()
+    {
+        leftRight = true;
+        while (leftRight)
+        {
+            transform.Translate(Vector3.right * (Time.deltaTime * 3));
+            yield return wffu;
         }
     }
     
@@ -72,6 +93,30 @@ public class DummyScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        
+        if (other.CompareTag("PlayerBullet") && canBeShot)
+        {
+            //in unity function to call appropriate procedural death effects (respawning the stoppers)
+            OnDeath.Invoke();
+            //callYourHit.lastInt = gameObject.transform.GetHashCode();
+            StartCoroutine(DeathSequence());
+            //Destroy(gameObject);
+            Destroy(other.gameObject);
+            Debug.Log("hit");
+        }
+        
+        if (other.name.Contains(stopperName))
+        {
+            leftRight = false;
+            StartCoroutine(StartShooting());
+        }
+        
+        if (other.CompareTag("EdgeStopper"))
+        {
+            
+            StartCoroutine(moveDummyLeft());
+        }
+        
         for (int i = 0; i < theseTags.Length; i++)
         {
             if (other.CompareTag(theseTags[i]))
@@ -82,14 +127,12 @@ public class DummyScript : MonoBehaviour
             }
         }
         
-        if (other.CompareTag("PlayerBullet") && canBeShot)
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-            Debug.Log("hit");
-        }
+        //destroy on bullet
+        
     }
     
+    
+    //on exit compares the tags with list and sets bools.
     private void OnTriggerExit(Collider other)
     {
         for (int i = 0; i < theseTags.Length; i++)
@@ -101,5 +144,11 @@ public class DummyScript : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public IEnumerator DeathSequence()
+    {
+        yield return new WaitForSeconds(.5f);
+        Destroy(gameObject);
     }
 }
