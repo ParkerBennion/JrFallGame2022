@@ -33,7 +33,7 @@ public class SO_IntList : ScriptableObject
     public void UpdateLastInt(GameObject lastAddedInt)
     {
         lastInt = lastAddedInt.transform.GetHashCode();
-        Debug.Log(lastAddedInt.transform.GetHashCode() + "is the last added int");
+        //Debug.Log(lastAddedInt.transform.GetHashCode() + "is the last added int");
     }
 
 }

@@ -8,14 +8,16 @@ public class PawnMovements : MonoBehaviour
     public SO_MovementParms PawnAttributesSO;
     public Rigidbody rb;
 
-    private WaitForFixedUpdate waitFixed;
+    protected WaitForFixedUpdate waitFixed;
 
-    private bool moveTrue;
-    private bool jumpTrue = true;
+    protected bool moveTrue;
+    protected bool jumpTrue = true;
+    protected bool shootToStopMove = false;
 
     private void Start()
     {
     }
+    
 
     public void MovePositoinLeft(InputAction.CallbackContext context)
     {
@@ -58,7 +60,10 @@ public class PawnMovements : MonoBehaviour
     {
         while (moveTrue)
         {
-            rb.MovePosition(transform.position + Vector3.left * (PawnAttributesSO.speed * Time.deltaTime));
+            if (!shootToStopMove)
+            {
+                rb.MovePosition(transform.position + Vector3.left * (PawnAttributesSO.speed * Time.deltaTime));
+            }
             yield return waitFixed;
         }
     }
@@ -67,7 +72,10 @@ public class PawnMovements : MonoBehaviour
     {
         while (moveTrue)
         {
-            rb.MovePosition(transform.position + Vector3.right * (PawnAttributesSO.speed * Time.deltaTime));
+            if (!shootToStopMove)
+            {
+                rb.MovePosition(transform.position + Vector3.right * (PawnAttributesSO.speed * Time.deltaTime));
+            }
             yield return waitFixed;
         }
     }
@@ -75,9 +83,22 @@ public class PawnMovements : MonoBehaviour
     private IEnumerator MoveJump()
     {
         
-        Debug.Log("jumped");
+        //Debug.Log("jumped");
         yield return new WaitForSeconds(2f);
         jumpTrue = true;
         
+    }
+
+    public void Shooting(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            shootToStopMove = true;
+        }
+
+        if (context.canceled)
+        {
+            shootToStopMove = false;
+        }
     }
 }

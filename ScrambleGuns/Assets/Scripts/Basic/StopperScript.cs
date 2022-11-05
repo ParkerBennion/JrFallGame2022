@@ -30,7 +30,7 @@ public class StopperScript : MonoBehaviour
             //hashStorrer.AddInt(other.gameObject.transform.GetHashCode());
             thisCollider.enabled = false;
             thisRenderer.enabled = false;
-            Debug.Log("deactivated");
+            //Debug.Log("deactivated");
 
             //gameObject.SetActive(false);
         }
@@ -41,7 +41,7 @@ public class StopperScript : MonoBehaviour
     {
         if (HashCode == hash.lastInt)
         {
-            Debug.Log("activated");
+            //Debug.Log("activated");
             thisCollider.enabled = true;
             thisRenderer.enabled = true;
         }

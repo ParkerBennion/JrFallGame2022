@@ -125,6 +125,24 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CursorUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""bef741ed-2d1e-4d57-a540-00b84949f509"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CursorDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""4579d65a-f2df-4083-bc36-6d9c886374cf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -197,7 +215,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""modifier"",
                     ""id"": ""8f63ca6b-0519-468f-8422-ab48f036a171"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -263,7 +281,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""modifier"",
                     ""id"": ""eda17a7d-baad-4286-8cc5-a6488828f072"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -457,6 +475,28 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""MoveRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4ae11b63-bb25-4194-86bd-20992fc9abc4"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CursorUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""898e6657-169b-4020-bf31-6dfe6e85ba28"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CursorDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -476,6 +516,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_Basic_Pause = m_Basic.FindAction("Pause", throwIfNotFound: true);
         m_Basic_ChargeOne = m_Basic.FindAction("ChargeOne", throwIfNotFound: true);
         m_Basic_ChargeTwo = m_Basic.FindAction("ChargeTwo", throwIfNotFound: true);
+        m_Basic_CursorUp = m_Basic.FindAction("CursorUp", throwIfNotFound: true);
+        m_Basic_CursorDown = m_Basic.FindAction("CursorDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -546,6 +588,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Basic_Pause;
     private readonly InputAction m_Basic_ChargeOne;
     private readonly InputAction m_Basic_ChargeTwo;
+    private readonly InputAction m_Basic_CursorUp;
+    private readonly InputAction m_Basic_CursorDown;
     public struct BasicActions
     {
         private @PlayerControlls m_Wrapper;
@@ -561,6 +605,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Basic_Pause;
         public InputAction @ChargeOne => m_Wrapper.m_Basic_ChargeOne;
         public InputAction @ChargeTwo => m_Wrapper.m_Basic_ChargeTwo;
+        public InputAction @CursorUp => m_Wrapper.m_Basic_CursorUp;
+        public InputAction @CursorDown => m_Wrapper.m_Basic_CursorDown;
         public InputActionMap Get() { return m_Wrapper.m_Basic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -603,6 +649,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @ChargeTwo.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnChargeTwo;
                 @ChargeTwo.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnChargeTwo;
                 @ChargeTwo.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnChargeTwo;
+                @CursorUp.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorUp;
+                @CursorUp.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorUp;
+                @CursorUp.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorUp;
+                @CursorDown.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorDown;
+                @CursorDown.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorDown;
+                @CursorDown.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorDown;
             }
             m_Wrapper.m_BasicActionsCallbackInterface = instance;
             if (instance != null)
@@ -640,6 +692,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @ChargeTwo.started += instance.OnChargeTwo;
                 @ChargeTwo.performed += instance.OnChargeTwo;
                 @ChargeTwo.canceled += instance.OnChargeTwo;
+                @CursorUp.started += instance.OnCursorUp;
+                @CursorUp.performed += instance.OnCursorUp;
+                @CursorUp.canceled += instance.OnCursorUp;
+                @CursorDown.started += instance.OnCursorDown;
+                @CursorDown.performed += instance.OnCursorDown;
+                @CursorDown.canceled += instance.OnCursorDown;
             }
         }
     }
@@ -657,5 +715,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnChargeOne(InputAction.CallbackContext context);
         void OnChargeTwo(InputAction.CallbackContext context);
+        void OnCursorUp(InputAction.CallbackContext context);
+        void OnCursorDown(InputAction.CallbackContext context);
     }
 }

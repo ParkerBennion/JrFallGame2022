@@ -103,6 +103,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CursorUp",
+                    "type": "Button",
+                    "id": "bef741ed-2d1e-4d57-a540-00b84949f509",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CursorDown",
+                    "type": "Button",
+                    "id": "4579d65a-f2df-4083-bc36-6d9c886374cf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -175,7 +193,7 @@
                 {
                     "name": "modifier",
                     "id": "8f63ca6b-0519-468f-8422-ab48f036a171",
-                    "path": "<Gamepad>/leftStick/left",
+                    "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -241,7 +259,7 @@
                 {
                     "name": "modifier",
                     "id": "eda17a7d-baad-4286-8cc5-a6488828f072",
-                    "path": "<Gamepad>/leftStick/right",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -433,6 +451,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ae11b63-bb25-4194-86bd-20992fc9abc4",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CursorUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "898e6657-169b-4020-bf31-6dfe6e85ba28",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CursorDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
