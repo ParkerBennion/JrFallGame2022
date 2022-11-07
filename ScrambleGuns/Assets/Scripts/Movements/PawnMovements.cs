@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PawnMovements : MonoBehaviour
@@ -13,6 +14,7 @@ public class PawnMovements : MonoBehaviour
     protected bool moveTrue;
     protected bool jumpTrue = true;
     protected bool shootToStopMove = false;
+    public UnityEvent PlayerHit;
 
     private void Start()
     {
@@ -99,6 +101,14 @@ public class PawnMovements : MonoBehaviour
         if (context.canceled)
         {
             shootToStopMove = false;
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            PlayerHit.Invoke();
+            //Debug.Log("HitPlayer");
         }
     }
 }

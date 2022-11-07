@@ -102,7 +102,7 @@ public class DummyScript : MonoBehaviour
             StartCoroutine(DeathSequence());
             //Destroy(gameObject);
             Destroy(other.gameObject);
-            Debug.Log("hit");
+            //Debug.Log("hit");
         }
         
         if (other.name.Contains(stopperName))

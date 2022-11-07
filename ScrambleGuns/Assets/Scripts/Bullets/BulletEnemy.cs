@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BulletEnemy : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class BulletEnemy : MonoBehaviour
     private Vector3 positionNow;
 
     private Vector3 myPosition;
-    
+
     public GameObject whereToHit;//the player
     public SpriteRenderer playerRenderer;
+
+    private float randX, randY;
     
     public float destroyTime;
     private float elapsTime;
@@ -24,6 +27,12 @@ public class BulletEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Timer = new WaitForSeconds(destroyTime);
         positionNow = endPosition.position;
+        randX = Random.Range(-.5f, .5f);
+        randY = Random.Range(-.5f, .5f);
+
+        positionNow.x += randX;
+        positionNow.y += randY;
+
     }
     private void Start()
     {
@@ -55,8 +64,8 @@ public class BulletEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerRenderer.color = Color.red;
-            Debug.Log("HitPlayer");
+            
+            //Debug.Log("HitPlayer");
         }
     }
 }

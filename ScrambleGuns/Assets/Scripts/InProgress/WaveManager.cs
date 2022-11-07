@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
-        TimerLong = new WaitForSeconds(3);
+        TimerLong = new WaitForSeconds(5);
         TimerMed = new WaitForSeconds(2);
         TimerShort = new WaitForSeconds(1);
         
@@ -31,7 +31,7 @@ public class WaveManager : MonoBehaviour
              //Debug.Log(locations[i]);
          }
 
-         StartCoroutine(TestingAllSpawns());
+         //StartCoroutine(TestingAllSpawns());
          StartCoroutine(SpawnOneSequence());
      }
      
@@ -43,36 +43,63 @@ public class WaveManager : MonoBehaviour
          {
              case 1:
              {
-                 enemyPrefab[0].transform.position = locations[0];
-                 Instantiate(enemyPrefab[0]);
+                 enemyPrefab[1].transform.position = locations[1];
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
                  //Debug.Log("1");
                  break;
              }
              case 2:
              {
+                 enemyPrefab[0].transform.position = locations[0];
+                 Instantiate(enemyPrefab[0]);
+                 Instantiate(enemyPrefab[0]);
+                 Instantiate(enemyPrefab[0]);
                  enemyPrefab[1].transform.position = locations[1];
+                 Instantiate(enemyPrefab[1]);
                  Instantiate(enemyPrefab[1]);
                  //Debug.Log("2");
                  break;
              }
              case 3:
              {
-                 enemyPrefab[2].transform.position = locations[2];
-                 Instantiate(enemyPrefab[2]);
                  enemyPrefab[3].transform.position = locations[3];
+                 Instantiate(enemyPrefab[3]);
+                 Instantiate(enemyPrefab[3]);
                  Instantiate(enemyPrefab[3]);
                  //Debug.Log("3");
                  break;
              }
              case 4:
              {
-                 StartCoroutine(TestingAllSpawns());
+                 enemyPrefab[3].transform.position = locations[4];
+                 Instantiate(enemyPrefab[3]);
+                 enemyPrefab[3].transform.position = locations[5];
+                 Instantiate(enemyPrefab[3]);
+                 enemyPrefab[3].transform.position = locations[6];
+                 Instantiate(enemyPrefab[3]);
+                 
+                 //StartCoroutine(TestingAllSpawns());
                  //Debug.Log("4");
                  break;
              }
              case 5:
              {
-                 //StartCoroutine(SpawnOnlyFront());
+                 enemyPrefab[3].transform.position = locations[4];
+                 Instantiate(enemyPrefab[3]);
+                 enemyPrefab[3].transform.position = locations[5];
+                 Instantiate(enemyPrefab[3]);
+                 enemyPrefab[3].transform.position = locations[6];
+                 Instantiate(enemyPrefab[3]);
+                 enemyPrefab[1].transform.position = locations[1];
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
+                 Instantiate(enemyPrefab[1]);
                  break;
              }
              default:
@@ -95,7 +122,7 @@ public class WaveManager : MonoBehaviour
       
          yield break;
      }
-     IEnumerator SpawnOnlyFront()
+     /*IEnumerator SpawnOnlyFront()
      {
          while (true)
          {
@@ -105,7 +132,7 @@ public class WaveManager : MonoBehaviour
          }
       
          yield break;
-     }
+     }*/
      
 
 

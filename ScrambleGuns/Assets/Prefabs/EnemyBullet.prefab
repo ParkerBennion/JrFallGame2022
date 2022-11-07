@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7955748202704171408}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPosition: {fileID: 11400000, guid: 47593be1b4e854948812669a535feaba, type: 2}
+  endScreen: {fileID: 0}
   whereToHit: {fileID: 8101662307113084098, guid: c4bb3bf516d100b4eab1ce56ab79d5b4, type: 3}
   playerRenderer: {fileID: 6993611699201750870, guid: d948361b5080db840bea7c0f64749cbc, type: 3}
   destroyTime: 2
