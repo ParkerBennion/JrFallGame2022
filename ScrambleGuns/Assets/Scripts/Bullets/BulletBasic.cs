@@ -15,8 +15,8 @@ public class BulletBasic : MonoBehaviour
         transform.position = startPosition.position;
         rb = GetComponent<Rigidbody>();
         half = new WaitForSeconds(.5f);
-        bulletSize = new Vector3(.27f, .27f, .27f);
-        endBulletSize = new Vector3(.5f, .5f, .5f);
+        //bulletSize = new Vector3(.27f, .27f, .27f);
+        //endBulletSize = new Vector3(.5f, .5f, .5f);
         //Debug.Log(endPosition.position);
         //Debug.Log(startPosition.position);
     }

@@ -28,7 +28,7 @@ public class BulletEnemy : MonoBehaviour
         Timer = new WaitForSeconds(destroyTime);
         positionNow = endPosition.position;
         randX = Random.Range(-.5f, .5f);
-        randY = Random.Range(-.5f, .5f);
+        randY = Random.Range(-.7f, .7f);
 
         positionNow.x += randX;
         positionNow.y += randY;
@@ -58,14 +58,5 @@ public class BulletEnemy : MonoBehaviour
         float percentageComplete = elapsTime / destroyTime;
         //rb.velocity = Vector.Lerp(transform.position, endPosition.position, transform.position + Vector3.right * (PawnAttributesSO.speed * Time.deltaTime);
         transform.position = Vector3.Lerp(myPosition, positionNow, percentageComplete);
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            
-            //Debug.Log("HitPlayer");
-        }
     }
 }

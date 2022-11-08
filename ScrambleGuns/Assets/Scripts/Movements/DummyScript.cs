@@ -87,7 +87,7 @@ public class DummyScript : MonoBehaviour
         {
             Instantiate(Bullet, transform.position,transform.rotation);
             //yield return new WaitForSeconds(Random.Range(1.2f,2.7f));
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
         }///////////////////////////////////////////////////////
     }
     

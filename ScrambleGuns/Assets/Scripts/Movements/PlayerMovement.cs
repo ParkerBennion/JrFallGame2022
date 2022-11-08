@@ -103,7 +103,7 @@ public class PlayerMovement : PawnMovements
         {
             if (cursor.transform.position.y !<= 4.45)
             {
-                cursor.transform.Translate(Vector3.up * (PawnAttributesSO.speed* 2f * Time.deltaTime));
+                cursor.transform.Translate(Vector3.up * (PawnAttributesSO.speed* 1.5f * Time.deltaTime));
             }
             yield return waitFixed;
         }
@@ -114,7 +114,7 @@ public class PlayerMovement : PawnMovements
         {
             if (cursor.transform.position.y !>= -5.1)
             {
-                cursor.transform.Translate(Vector3.down * (PawnAttributesSO.speed * 2f * Time.deltaTime));;
+                cursor.transform.Translate(Vector3.down * (PawnAttributesSO.speed * 1.5f * Time.deltaTime));;
             }
             yield return waitFixed;
         }
