@@ -476,23 +476,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 54c6b70b5fe794cb59684e3dbb107df5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.42000002
+      value: 0.631596
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 54c6b70b5fe794cb59684e3dbb107df5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.42000002
+      value: 0.631596
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 54c6b70b5fe794cb59684e3dbb107df5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.42000002
+      value: 0.631596
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 54c6b70b5fe794cb59684e3dbb107df5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15
+      value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 54c6b70b5fe794cb59684e3dbb107df5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.28
+      value: -7.87
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 54c6b70b5fe794cb59684e3dbb107df5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -969,7 +969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &269449046
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1791,11 +1791,11 @@ RectTransform:
   m_Father: {fileID: 1096576084}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -773, y: -253}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 41, y: 41}
   m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &683950903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2136,7 +2136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853299437}
   m_LocalRotation: {x: -1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.866646, y: -0.49999475, z: -15.726371}
+  m_LocalPosition: {x: -5.866646, y: -0.49999472, z: -15.726371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2791,7 +2791,7 @@ SpriteRenderer:
   m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.3254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2810,7 +2810,7 @@ Transform:
   m_GameObject: {fileID: 1107517158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.41, y: -1.48, z: 10.27}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 55214133}
@@ -2838,7 +2838,7 @@ BoxCollider:
   m_GameObject: {fileID: 1107517158}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 3.57}
   m_Center: {x: 0, y: 0, z: -8.84}
@@ -2912,9 +2912,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115757375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.54, y: -4.17, z: 2.241}
-  m_LocalScale: {x: 0.5227, y: 2.0908, z: 0.5227}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -6.54, y: -2.96, z: 2.241}
+  m_LocalScale: {x: 0.88, y: 3.52, z: 0.88}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2978,18 +2978,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1329622444}
         m_TargetAssemblyTypeName: PawnMovements, Assembly-CSharp
         m_MethodName: MovePositoinLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1329622447}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: MoveCursorLeft
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3111,20 +3099,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1329622447}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: MoveCursorRight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 3c8caa9d-d74c-4637-b40f-648d4ea9679a
     m_ActionName: Basic/MoveRight[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bef741ed-2d1e-4d57-a540-00b84949f509
+    m_ActionName: Basic/CursorUp
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4579d65a-f2df-4083-bc36-6d9c886374cf
+    m_ActionName: Basic/CursorDown
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1329622447}
@@ -3139,8 +3123,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: bef741ed-2d1e-4d57-a540-00b84949f509
-    m_ActionName: Basic/CursorUp
+    m_ActionId: 6477a45c-ab48-4a77-a02d-75ad1ec3faf4
+    m_ActionName: Basic/Aim
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1329622447}
@@ -3155,8 +3139,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 4579d65a-f2df-4083-bc36-6d9c886374cf
-    m_ActionName: Basic/CursorDown
+    m_ActionId: 7fdbb9dc-df14-48b3-b00f-2426f42e6360
+    m_ActionName: Basic/AimDown
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1329622447}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: MoveCursorLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a3bc9969-233b-497a-8a2d-f63a31792df9
+    m_ActionName: Basic/AimLeft
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1329622447}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: MoveCursorRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8f32df3e-ab50-439b-a547-a935a9d85006
+    m_ActionName: Basic/AimRight
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Basic
@@ -3291,6 +3307,7 @@ GameObject:
   - component: {fileID: 1337258129}
   - component: {fileID: 1337258132}
   - component: {fileID: 1337258133}
+  - component: {fileID: 1337258134}
   m_Layer: 5
   m_Name: ShootButton
   m_TagString: Untagged
@@ -3316,7 +3333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -350, y: 150}
+  m_AnchoredPosition: {x: -109, y: 110}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1337258129
@@ -3430,6 +3447,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ControlPath: <Gamepad>/buttonWest
+--- !u!114 &1337258134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337258127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 50
+  m_ControlPath: <Gamepad>/rightStick
 --- !u!1 &1346324081
 GameObject:
   m_ObjectHideFlags: 3
@@ -3695,7 +3726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359239428}
   m_LocalRotation: {x: -1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.39043, y: -1.7687144, z: -15.726371}
+  m_LocalPosition: {x: -8.39043, y: -0.5587144, z: -15.726371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

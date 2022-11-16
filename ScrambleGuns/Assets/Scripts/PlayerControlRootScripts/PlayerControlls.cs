@@ -143,6 +143,42 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""6477a45c-ab48-4a77-a02d-75ad1ec3faf4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AimDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fdbb9dc-df14-48b3-b00f-2426f42e6360"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""a3bc9969-233b-497a-8a2d-f63a31792df9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f32df3e-ab50-439b-a547-a935a9d85006"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -303,7 +339,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""693f075f-c16a-4e71-ab4f-16c4e8c676c3"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -497,6 +533,50 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""CursorDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3256e10d-9b19-4e65-9bb7-216ff24170f1"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b3a9753-28c9-49b9-bb15-ff9b5d2c877d"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02555ee5-4cf3-4655-8c68-35e6de767bac"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""538e3a92-6a6b-4eeb-8a09-3e9f4f306138"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -518,6 +598,10 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_Basic_ChargeTwo = m_Basic.FindAction("ChargeTwo", throwIfNotFound: true);
         m_Basic_CursorUp = m_Basic.FindAction("CursorUp", throwIfNotFound: true);
         m_Basic_CursorDown = m_Basic.FindAction("CursorDown", throwIfNotFound: true);
+        m_Basic_AimUp = m_Basic.FindAction("AimUp", throwIfNotFound: true);
+        m_Basic_AimDown = m_Basic.FindAction("AimDown", throwIfNotFound: true);
+        m_Basic_AimLeft = m_Basic.FindAction("AimLeft", throwIfNotFound: true);
+        m_Basic_AimRight = m_Basic.FindAction("AimRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -590,6 +674,10 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Basic_ChargeTwo;
     private readonly InputAction m_Basic_CursorUp;
     private readonly InputAction m_Basic_CursorDown;
+    private readonly InputAction m_Basic_AimUp;
+    private readonly InputAction m_Basic_AimDown;
+    private readonly InputAction m_Basic_AimLeft;
+    private readonly InputAction m_Basic_AimRight;
     public struct BasicActions
     {
         private @PlayerControlls m_Wrapper;
@@ -607,6 +695,10 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @ChargeTwo => m_Wrapper.m_Basic_ChargeTwo;
         public InputAction @CursorUp => m_Wrapper.m_Basic_CursorUp;
         public InputAction @CursorDown => m_Wrapper.m_Basic_CursorDown;
+        public InputAction @AimUp => m_Wrapper.m_Basic_AimUp;
+        public InputAction @AimDown => m_Wrapper.m_Basic_AimDown;
+        public InputAction @AimLeft => m_Wrapper.m_Basic_AimLeft;
+        public InputAction @AimRight => m_Wrapper.m_Basic_AimRight;
         public InputActionMap Get() { return m_Wrapper.m_Basic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -655,6 +747,18 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @CursorDown.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorDown;
                 @CursorDown.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorDown;
                 @CursorDown.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnCursorDown;
+                @AimUp.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimUp;
+                @AimUp.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimUp;
+                @AimUp.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimUp;
+                @AimDown.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimDown;
+                @AimDown.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimDown;
+                @AimDown.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimDown;
+                @AimLeft.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimLeft;
+                @AimLeft.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimLeft;
+                @AimLeft.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimLeft;
+                @AimRight.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimRight;
+                @AimRight.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimRight;
+                @AimRight.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnAimRight;
             }
             m_Wrapper.m_BasicActionsCallbackInterface = instance;
             if (instance != null)
@@ -698,6 +802,18 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @CursorDown.started += instance.OnCursorDown;
                 @CursorDown.performed += instance.OnCursorDown;
                 @CursorDown.canceled += instance.OnCursorDown;
+                @AimUp.started += instance.OnAimUp;
+                @AimUp.performed += instance.OnAimUp;
+                @AimUp.canceled += instance.OnAimUp;
+                @AimDown.started += instance.OnAimDown;
+                @AimDown.performed += instance.OnAimDown;
+                @AimDown.canceled += instance.OnAimDown;
+                @AimLeft.started += instance.OnAimLeft;
+                @AimLeft.performed += instance.OnAimLeft;
+                @AimLeft.canceled += instance.OnAimLeft;
+                @AimRight.started += instance.OnAimRight;
+                @AimRight.performed += instance.OnAimRight;
+                @AimRight.canceled += instance.OnAimRight;
             }
         }
     }
@@ -717,5 +833,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnChargeTwo(InputAction.CallbackContext context);
         void OnCursorUp(InputAction.CallbackContext context);
         void OnCursorDown(InputAction.CallbackContext context);
+        void OnAimUp(InputAction.CallbackContext context);
+        void OnAimDown(InputAction.CallbackContext context);
+        void OnAimLeft(InputAction.CallbackContext context);
+        void OnAimRight(InputAction.CallbackContext context);
     }
 }

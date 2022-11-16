@@ -121,6 +121,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AimUp",
+                    "type": "Button",
+                    "id": "6477a45c-ab48-4a77-a02d-75ad1ec3faf4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "AimDown",
+                    "type": "Button",
+                    "id": "7fdbb9dc-df14-48b3-b00f-2426f42e6360",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AimLeft",
+                    "type": "Button",
+                    "id": "a3bc9969-233b-497a-8a2d-f63a31792df9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AimRight",
+                    "type": "Button",
+                    "id": "8f32df3e-ab50-439b-a547-a935a9d85006",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -281,7 +317,7 @@
                 {
                     "name": "",
                     "id": "693f075f-c16a-4e71-ab4f-16c4e8c676c3",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -473,6 +509,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "CursorDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3256e10d-9b19-4e65-9bb7-216ff24170f1",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b3a9753-28c9-49b9-bb15-ff9b5d2c877d",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02555ee5-4cf3-4655-8c68-35e6de767bac",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "538e3a92-6a6b-4eeb-8a09-3e9f4f306138",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
