@@ -6,11 +6,13 @@ public class WaveManager : MonoBehaviour
 {
     public GameObject[] spawnPositions;
     private Vector3[] locations;
+    
     public GameObject[] enemyPrefab;
+    
     public WaitForSeconds TimerShort;
     public WaitForSeconds TimerMed;
     public WaitForSeconds TimerLong;
-    private int switcher = 0;
+    private int switcher = 1;
     
 
     private void Awake()
@@ -43,63 +45,23 @@ public class WaveManager : MonoBehaviour
          {
              case 1:
              {
+                 enemyPrefab[0].transform.position = locations[0];
+                 Instantiate(enemyPrefab[0]);
                  enemyPrefab[1].transform.position = locations[1];
                  Instantiate(enemyPrefab[1]);
+                 enemyPrefab[2].transform.position = locations[2];
+                 Instantiate(enemyPrefab[2]);
+                 enemyPrefab[0].transform.position = locations[3];
+                 Instantiate(enemyPrefab[0]);
+                 enemyPrefab[1].transform.position = locations[4];
                  Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
+                 enemyPrefab[2].transform.position = locations[5];
+                 Instantiate(enemyPrefab[2]);
                  //Debug.Log("1");
                  break;
              }
              case 2:
              {
-                 enemyPrefab[0].transform.position = locations[0];
-                 Instantiate(enemyPrefab[0]);
-                 Instantiate(enemyPrefab[0]);
-                 Instantiate(enemyPrefab[0]);
-                 enemyPrefab[1].transform.position = locations[1];
-                 Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
-                 //Debug.Log("2");
-                 break;
-             }
-             case 3:
-             {
-                 enemyPrefab[3].transform.position = locations[3];
-                 Instantiate(enemyPrefab[3]);
-                 Instantiate(enemyPrefab[3]);
-                 Instantiate(enemyPrefab[3]);
-                 //Debug.Log("3");
-                 break;
-             }
-             case 4:
-             {
-                 enemyPrefab[3].transform.position = locations[4];
-                 Instantiate(enemyPrefab[3]);
-                 enemyPrefab[3].transform.position = locations[5];
-                 Instantiate(enemyPrefab[3]);
-                 enemyPrefab[3].transform.position = locations[6];
-                 Instantiate(enemyPrefab[3]);
-                 
-                 //StartCoroutine(TestingAllSpawns());
-                 //Debug.Log("4");
-                 break;
-             }
-             case 5:
-             {
-                 enemyPrefab[3].transform.position = locations[4];
-                 Instantiate(enemyPrefab[3]);
-                 enemyPrefab[3].transform.position = locations[5];
-                 Instantiate(enemyPrefab[3]);
-                 enemyPrefab[3].transform.position = locations[6];
-                 Instantiate(enemyPrefab[3]);
-                 enemyPrefab[1].transform.position = locations[1];
-                 Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
-                 Instantiate(enemyPrefab[1]);
                  break;
              }
              default:
@@ -141,11 +103,9 @@ public class WaveManager : MonoBehaviour
          bool SequenceGo = true;
          while (SequenceGo)
          {
-
-             yield return TimerLong;
              SwitchSpawnSequence();
              switcher += 1;
-
+             yield return TimerLong;
          }
 
 

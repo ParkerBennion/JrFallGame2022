@@ -8,15 +8,19 @@ public class PlayerMovement : PawnMovements
     private WaitForSeconds fireTime;
     public GameObject cursor;
     private bool cursorMove= false;
-    private Coroutine leftmove = null;
-    private Coroutine rightmove = null;
-    private Coroutine upmove = null;
-    private Coroutine downmove = null;
+    private IEnumerator leftmove;
+    private IEnumerator rightmove;
+    private IEnumerator upmove;
+    private IEnumerator downmove;
     public GameObject leftBound,rightBound;
     private bool left, right, up, down;
     private void Awake()
     {
         fireTime = new WaitForSeconds(PawnAttributesSO.fireRate);
+        downmove = MoveCursorDown();
+        upmove = MoveCursorUp();
+        rightmove = MoveCursorRight();
+        leftmove = MoveCursorLeft();
     }
 
     public void StartShooting(InputAction.CallbackContext context)
@@ -48,7 +52,7 @@ public class PlayerMovement : PawnMovements
     {
         if (context.performed && !up)
         {
-            upmove = StartCoroutine(MoveCursorUp());
+            StartCoroutine(upmove);
         }
 
         if (context.canceled)
@@ -62,7 +66,8 @@ public class PlayerMovement : PawnMovements
     {
         if (context.performed && !down)
         {
-            downmove = StartCoroutine(MoveCursorDown());
+            
+            StartCoroutine(downmove);
         }
 
         if (context.canceled)
@@ -76,7 +81,7 @@ public class PlayerMovement : PawnMovements
     {
         if (context.performed && !left)
         {
-            leftmove = StartCoroutine(MoveCursorLeft());
+            StartCoroutine(leftmove);
         }
 
         if (context.canceled)
@@ -90,7 +95,7 @@ public class PlayerMovement : PawnMovements
     {
         if (context.performed && !right)
         {
-            rightmove = StartCoroutine(MoveCursorRight());
+            StartCoroutine(rightmove);
         }
 
         if (context.canceled)

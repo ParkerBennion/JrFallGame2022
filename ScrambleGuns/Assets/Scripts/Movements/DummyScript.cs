@@ -16,6 +16,7 @@ public class DummyScript : MonoBehaviour
     public string stopperName;
     private bool ammunition = true;
     public UnityEvent OnDeath;
+    private int leftOrRight = 1;
 
 
     public bool canBeShot = true;
@@ -26,18 +27,22 @@ public class DummyScript : MonoBehaviour
         //StartCoroutine(Timer());
         StartCoroutine(moveDummyRight());
         thisCollider = GetComponent<BoxCollider>();
+        if (transform.position.x > 0)
+        {
+            leftOrRight = -1;
+        }
     }
 
     IEnumerator moveDummy()
     {
         while (leftRight)
         {
-            transform.Translate(Vector3.left * (Time.deltaTime * 3));
+            transform.Translate(Vector3.left * (leftOrRight * (Time.deltaTime * 3)));
             yield return wffu;
         }
         while (!leftRight)
         {
-            transform.Translate(Vector3.right * (Time.deltaTime * 3));
+            transform.Translate(Vector3.right * (leftOrRight * (Time.deltaTime * 3)));
             yield return wffu;
         }
 
@@ -52,7 +57,7 @@ public class DummyScript : MonoBehaviour
         leftRight = true;
         while (leftRight)
         {
-            transform.Translate(Vector3.left * (Time.deltaTime * 3));
+            transform.Translate(Vector3.left * (leftOrRight * (Time.deltaTime * 3)));
             yield return wffu;
         }
     }
@@ -62,7 +67,7 @@ public class DummyScript : MonoBehaviour
         leftRight = true;
         while (leftRight)
         {
-            transform.Translate(Vector3.right * (Time.deltaTime * 3));
+            transform.Translate(Vector3.right * (leftOrRight * (Time.deltaTime * 3)));
             yield return wffu;
         }
     }

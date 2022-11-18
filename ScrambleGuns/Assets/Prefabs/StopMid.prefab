@@ -116,6 +116,7 @@ MonoBehaviour:
   HashCode: 0
   ComparedCode: 0
   resetOnThisNameOnly: Mid
+  nameOfEnemyToStop: MidEnemy
 --- !u!114 &3551196909217583436
 MonoBehaviour:
   m_ObjectHideFlags: 0

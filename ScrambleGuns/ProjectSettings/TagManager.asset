@@ -10,6 +10,8 @@ TagManager:
   - Stopper
   - EdgeStopper
   - Enemy
+  - FrontEnemy
+  - MidEnemy
   layers:
   - Default
   - TransparentFX

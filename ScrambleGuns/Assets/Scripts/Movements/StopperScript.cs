@@ -12,6 +12,7 @@ public class StopperScript : MonoBehaviour
     private Collider thisCollider;
     public string resetOnThisNameOnly;
     private SpriteRenderer thisRenderer;
+    public string nameOfEnemyToStop;
     
 
     private void Awake()
@@ -23,7 +24,7 @@ public class StopperScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //detects the collision and stores the value of the object that hit it.
-        if (other.gameObject.CompareTag("Enemy") /*&& other.gameObject.name.Contains(resetOnThisNameOnly)*/)
+        if (other.gameObject.CompareTag(nameOfEnemyToStop) /*&& other.gameObject.name.Contains(resetOnThisNameOnly)*/)
         {
             HashCode = other.gameObject.transform.GetHashCode();
             //Debug.Log(HashCode);
