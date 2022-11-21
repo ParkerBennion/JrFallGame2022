@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
     public WaitForSeconds TimerShort;
     public WaitForSeconds TimerMed;
     public WaitForSeconds TimerLong;
-    private int switcher = 1;
+    private int switcher = 0;
     
 
     private void Awake()
@@ -35,16 +35,17 @@ public class WaveManager : MonoBehaviour
 
          //StartCoroutine(TestingAllSpawns());
          StartCoroutine(SpawnOneSequence());
+         //SwitchSpawnSequence(100);
      }
      
      
-     public void SwitchSpawnSequence()
+     public void SwitchSpawnSequence(int commandToRun)
      {
-         
-         switch (switcher)
+         switch (commandToRun)
          {
-             case 1:
+             case 100:
              {
+                 //TestAllPoints
                  enemyPrefab[0].transform.position = locations[0];
                  Instantiate(enemyPrefab[0]);
                  enemyPrefab[1].transform.position = locations[1];
@@ -60,8 +61,34 @@ public class WaveManager : MonoBehaviour
                  //Debug.Log("1");
                  break;
              }
+             case 0:
+             {
+                 Debug.Log("spawning initialized");
+                 break;
+             }
+             case 1:
+             {
+                 Debug.Log("Spawn start");
+                 enemyPrefab[0].transform.position = locations[0];
+                 Instantiate(enemyPrefab[0]);
+                 break;
+             }
              case 2:
              {
+                 enemyPrefab[1].transform.position = locations[1];
+                 Instantiate(enemyPrefab[1]);
+                 break;
+             }
+             case 3:
+             {
+                 enemyPrefab[2].transform.position = locations[2];
+                 Instantiate(enemyPrefab[2]);
+                 
+                 break;
+             }
+             case 4:
+             {
+                 Debug.Log("resetting sequence");
                  break;
              }
              default:
@@ -103,7 +130,7 @@ public class WaveManager : MonoBehaviour
          bool SequenceGo = true;
          while (SequenceGo)
          {
-             SwitchSpawnSequence();
+             SwitchSpawnSequence(switcher);
              switcher += 1;
              yield return TimerLong;
          }

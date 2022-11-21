@@ -3,12 +3,24 @@ using UnityEngine;
 public class SO_MovementParms : ScriptableObject
 {
     public float speed;
-    public bool isPlayer;
+    //how fast they move across the screen
+    
     public bool isActive;
-    //public float bulletFireRate;
+    //null
+    
     public bool canShoot;
-    public bool canJump;
+    //if can currently shoot
+    
     public GameObject bulletFab;
+    //type of bullet it shoots
+    
     public float fireRate;
+    //fire rate
+    
+    public int[] codex;
+    //the program the enemy will follow
+    
+    public string stopper;
+    //maximum of 2 stoppers
 }
 

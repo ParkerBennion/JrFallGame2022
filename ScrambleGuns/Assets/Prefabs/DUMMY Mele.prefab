@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316107811980915881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.756033, y: -3.0365324, z: 10}
+  m_LocalPosition: {x: -15.183968, y: -3.0365324, z: 10}
   m_LocalScale: {x: 0.9, y: 1.77, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,10 +103,9 @@ MonoBehaviour:
   timer: 1
   leftRight: 0
   Bullet: {fileID: 6471584809109050426, guid: 8f067aaaaea56c540a287c87ec1119aa, type: 3}
-  stats: {fileID: 11400000, guid: 16fd10f6f0933aa45875075cf2453130, type: 2}
+  stats: {fileID: 11400000, guid: eb579371e39ffe744a6bd902488f7b92, type: 2}
   thisCollider: {fileID: 1316107811980915885}
   theseTags: []
-  stopperName: StopMele
   OnDeath:
     m_PersistentCalls:
       m_Calls:

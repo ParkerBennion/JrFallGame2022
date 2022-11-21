@@ -103,11 +103,10 @@ MonoBehaviour:
   timer: 1
   leftRight: 0
   Bullet: {fileID: 6471584809109050426, guid: 8f067aaaaea56c540a287c87ec1119aa, type: 3}
-  stats: {fileID: 11400000, guid: 16fd10f6f0933aa45875075cf2453130, type: 2}
+  stats: {fileID: 11400000, guid: c15c225c93b96064f9aaaf62ada30562, type: 2}
   thisCollider: {fileID: 1316107811980915885}
   theseTags:
   - Cover
-  stopperName: StopFront
   OnDeath:
     m_PersistentCalls:
       m_Calls:

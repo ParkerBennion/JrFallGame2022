@@ -108,7 +108,6 @@ MonoBehaviour:
   theseTags:
   - Cover
   - Finish
-  stopperName: StopMid
   OnDeath:
     m_PersistentCalls:
       m_Calls:

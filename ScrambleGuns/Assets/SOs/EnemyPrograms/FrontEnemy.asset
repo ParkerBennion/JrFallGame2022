@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aff65937dcb30584e8061c983d436e19, type: 3}
-  m_Name: MidEnemy
+  m_Name: FrontEnemy
   m_EditorClassIdentifier: 
   speed: 0
-  isPlayer: 0
   isActive: 0
   canShoot: 0
-  canJump: 0
   bulletFab: {fileID: 0}
-  fireRate: 0
+  fireRate: 1
+  codex: 01000000
+  stopper: StopFront

@@ -8,12 +8,13 @@ public class DummyScript : MonoBehaviour
 {
     public bool timer = true;
     public bool leftRight = true;
+    
+    
     private WaitForFixedUpdate wffu;
     public GameObject Bullet;
     public EnemyStat_SO stats;
     public BoxCollider thisCollider;
-    public string[] theseTags;
-    public string stopperName;
+    public string[] InCoverTags;
     private bool ammunition = true;
     public UnityEvent OnDeath;
     private int leftOrRight = 1;
@@ -23,17 +24,55 @@ public class DummyScript : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(moveDummy());
-        //StartCoroutine(Timer());
-        StartCoroutine(moveDummyRight());
         thisCollider = GetComponent<BoxCollider>();
+        
         if (transform.position.x > 0)
         {
             leftOrRight = -1;
         }
+
+        foreach (var command  in stats.codex)
+        {
+            SwitchSpawnSequence(command);
+        }
+    }
+    
+    public void SwitchSpawnSequence(int codeCommand)
+    {
+         
+        switch (codeCommand)
+        {
+            case 1:
+            {
+                StartCoroutine(moveDummyRight());
+                break;
+            }
+            case 2:
+            {
+                Debug.Log("2");
+                ImmuneTillStop();
+                break;
+            }
+            case 3:
+            {
+                Debug.Log("3");
+                break;
+            }
+            default:
+            {
+                Debug.Log("default");
+                break;
+            }
+        }
     }
 
-    IEnumerator moveDummy()
+    private void ImmuneTillStop()
+    {
+        canBeShot = false;
+    }
+
+
+    /*IEnumerator moveDummy()
     {
         while (leftRight)
         {
@@ -50,7 +89,7 @@ public class DummyScript : MonoBehaviour
         {
             StartCoroutine(moveDummy());
         }
-    }
+    }*/
     
     IEnumerator moveDummyLeft()
     {
@@ -90,9 +129,9 @@ public class DummyScript : MonoBehaviour
         
         while (ammunition)
         {
+            yield return new WaitForSeconds(stats.fireRate);
             Instantiate(Bullet, transform.position,transform.rotation);
             //yield return new WaitForSeconds(Random.Range(1.2f,2.7f));
-            yield return new WaitForSeconds(3);
         }///////////////////////////////////////////////////////
     }
     
@@ -110,10 +149,11 @@ public class DummyScript : MonoBehaviour
             //Debug.Log("hit");
         }
         
-        if (other.name.Contains(stopperName))
+        if (other.name.Contains(stats.stopper))
         {
             leftRight = false;
             StartCoroutine(StartShooting());
+            canBeShot = true;
         }
         
         if (other.CompareTag("EdgeStopper"))
@@ -122,9 +162,9 @@ public class DummyScript : MonoBehaviour
             StartCoroutine(moveDummyLeft());
         }
         
-        for (int i = 0; i < theseTags.Length; i++)
+        for (int i = 0; i < InCoverTags.Length; i++)
         {
-            if (other.CompareTag(theseTags[i]))
+            if (other.CompareTag(InCoverTags[i]))
             {
                 canBeShot = false;
                 ammunition = false;
@@ -140,9 +180,9 @@ public class DummyScript : MonoBehaviour
     //on exit compares the tags with list and sets bools.
     private void OnTriggerExit(Collider other)
     {
-        for (int i = 0; i < theseTags.Length; i++)
+        for (int i = 0; i < InCoverTags.Length; i++)
         {
-            if (other.CompareTag(theseTags[i]))
+            if (other.CompareTag(InCoverTags[i]))
             {
                 ammunition = true;
                 canBeShot = true;
