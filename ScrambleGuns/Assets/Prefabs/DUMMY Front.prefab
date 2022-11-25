@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1316107811980915874}
   - component: {fileID: 1316107811980915885}
   - component: {fileID: 5009091799738508550}
+  - component: {fileID: 5565019393546972064}
   m_Layer: 0
   m_Name: DUMMY Front
   m_TagString: FrontEnemy
@@ -29,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316107811980915881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.796033, y: -2.6665325, z: 10}
-  m_LocalScale: {x: 0.82, y: 1.43, z: 0.9527479}
+  m_LocalPosition: {x: -15.203966, y: -2.6665325, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -758455067
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 823675179, guid: 42e5ac17e03bece419a24d9a26dbb115, type: 3}
   m_Color: {r: 0.6226415, g: 0.31425774, b: 0.61473423, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,8 +106,7 @@ MonoBehaviour:
   Bullet: {fileID: 6471584809109050426, guid: 8f067aaaaea56c540a287c87ec1119aa, type: 3}
   stats: {fileID: 11400000, guid: c15c225c93b96064f9aaaf62ada30562, type: 2}
   thisCollider: {fileID: 1316107811980915885}
-  theseTags:
-  - Cover
+  InCoverTags: []
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -146,6 +146,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  AnimHere: {fileID: 5565019393546972064}
   canBeShot: 1
 --- !u!54 &1316107811980915874
 Rigidbody:
@@ -209,3 +210,23 @@ MonoBehaviour:
   quitBehaviour:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &5565019393546972064
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316107811980915881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcbb599991856904182d2875010b8ada, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

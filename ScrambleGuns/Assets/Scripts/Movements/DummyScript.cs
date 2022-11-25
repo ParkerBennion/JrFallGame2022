@@ -18,6 +18,7 @@ public class DummyScript : MonoBehaviour
     private bool ammunition = true;
     public UnityEvent OnDeath;
     private int leftOrRight = 1;
+    public Animator AnimHere;
 
 
     public bool canBeShot = true;
@@ -152,6 +153,7 @@ public class DummyScript : MonoBehaviour
         if (other.name.Contains(stats.stopper))
         {
             leftRight = false;
+            AnimHere.SetBool("IsMoving",false);
             StartCoroutine(StartShooting());
             canBeShot = true;
         }

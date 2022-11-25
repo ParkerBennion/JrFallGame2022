@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316107811980915881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.476033, y: -2.07, z: 10}
+  m_LocalPosition: {x: -7.113967, y: -2.07, z: 10}
   m_LocalScale: {x: 0.53, y: 0.7338462, z: 0.7338462}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -105,9 +105,7 @@ MonoBehaviour:
   Bullet: {fileID: 6471584809109050426, guid: 8f067aaaaea56c540a287c87ec1119aa, type: 3}
   stats: {fileID: 11400000, guid: 16fd10f6f0933aa45875075cf2453130, type: 2}
   thisCollider: {fileID: 1316107811980915885}
-  theseTags:
-  - Cover
-  - Finish
+  InCoverTags: []
   OnDeath:
     m_PersistentCalls:
       m_Calls:
