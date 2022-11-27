@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Animator))]
 public class DummyScript : MonoBehaviour
 {
     public bool timer = true;
@@ -25,11 +26,15 @@ public class DummyScript : MonoBehaviour
 
     void Start()
     {
+        AnimHere = GetComponent<Animator>();
         thisCollider = GetComponent<BoxCollider>();
+        AnimHere.SetBool("IsMoving",true);
+        AnimHere.SetBool("Mirror",false);
         
         if (transform.position.x > 0)
         {
             leftOrRight = -1;
+            AnimHere.SetBool("Mirror",true);
         }
 
         foreach (var command  in stats.codex)

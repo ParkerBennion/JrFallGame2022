@@ -50,5 +50,6 @@ public class PlayersBullet : MonoBehaviour
         float percentageComplete = elapsTime / destroyTime;
         //rb.velocity = Vector.Lerp(transform.position, endPosition.position, transform.position + Vector3.right * (PawnAttributesSO.speed * Time.deltaTime);
         transform.position = Vector3.Lerp(myPositionAtShoot, positionNow, percentageComplete);
+        transform.localScale = Vector3.Lerp(new Vector3(1,1,1), new Vector3(.3f,.3f,.3f), percentageComplete);
     }
 }

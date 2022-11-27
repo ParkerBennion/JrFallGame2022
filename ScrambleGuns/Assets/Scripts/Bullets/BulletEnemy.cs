@@ -17,9 +17,9 @@ public class BulletEnemy : MonoBehaviour
     public GameObject whereToHit;//the player
     public SpriteRenderer playerRenderer;
 
-    private float randX, randY;
+    private float randX, randY;//adds inacuracy
     
-    public float destroyTime;
+    public float destroyTime;// how long until destruct
     private float elapsTime;
     
     private void Awake()
@@ -28,7 +28,7 @@ public class BulletEnemy : MonoBehaviour
         Timer = new WaitForSeconds(destroyTime);
         positionNow = endPosition.position;
         randX = Random.Range(-.5f, .5f);
-        randY = Random.Range(-.7f, .7f);
+        randY = Random.Range(-1f, 1f);
 
         positionNow.x += randX;
         positionNow.y += randY;

@@ -35,7 +35,7 @@ public class WaveManager : MonoBehaviour
 
          //StartCoroutine(TestingAllSpawns());
          StartCoroutine(SpawnOneSequence());
-         //SwitchSpawnSequence(100);
+         SwitchSpawnSequence(100);
      }
      
      

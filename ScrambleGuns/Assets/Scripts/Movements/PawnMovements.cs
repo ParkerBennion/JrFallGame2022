@@ -19,7 +19,6 @@ public class PawnMovements : MonoBehaviour
     private void Start()
     {
     }
-    
 
     public void MovePositoinLeft(InputAction.CallbackContext context)
     {
@@ -32,7 +31,6 @@ public class PawnMovements : MonoBehaviour
         {
             moveTrue = false;
         }
-        
     }
     public void MovePositoinRight(InputAction.CallbackContext context)
     {
@@ -45,7 +43,6 @@ public class PawnMovements : MonoBehaviour
         {
             moveTrue = false;
         }
-        
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -84,11 +81,9 @@ public class PawnMovements : MonoBehaviour
     
     private IEnumerator MoveJump()
     {
-        
         //Debug.Log("jumped");
         yield return new WaitForSeconds(2f);
         jumpTrue = true;
-        
     }
 
     public void Shooting(InputAction.CallbackContext context)

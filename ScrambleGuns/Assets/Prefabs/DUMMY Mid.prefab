@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1316107811980915874}
   - component: {fileID: 1316107811980915885}
   - component: {fileID: 5009091799738508550}
+  - component: {fileID: -464150652996417141}
   m_Layer: 0
   m_Name: DUMMY Mid
   m_TagString: MidEnemy
@@ -29,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316107811980915881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.113967, y: -2.07, z: 10}
-  m_LocalScale: {x: 0.53, y: 0.7338462, z: 0.7338462}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 5.476033, y: -0.8765326, z: 10}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 2040260215
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 823675179, guid: 42e5ac17e03bece419a24d9a26dbb115, type: 3}
   m_Color: {r: 0.2487928, g: 0.5377358, b: 0.23589353, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -145,6 +146,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  AnimHere: {fileID: -464150652996417141}
   canBeShot: 1
 --- !u!54 &1316107811980915874
 Rigidbody:
@@ -173,8 +175,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1.7753927, z: 0.20000005}
-  m_Center: {x: 0, y: -0.004804427, z: 0}
+  m_Size: {x: 0.6324525, y: 1.4574528, z: 0.20000005}
+  m_Center: {x: 0.0011274815, y: -0.012696505, z: 0}
 --- !u!114 &5009091799738508550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +210,23 @@ MonoBehaviour:
   quitBehaviour:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &-464150652996417141
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316107811980915881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcbb599991856904182d2875010b8ada, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
