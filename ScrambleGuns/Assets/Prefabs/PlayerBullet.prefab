@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPosition: {fileID: 11400000, guid: 41216f152e077634f8ab912159f15fec, type: 2}
   myPosition: {fileID: 11400000, guid: 47593be1b4e854948812669a535feaba, type: 2}
-  destroyTime: 0.5
+  destroyTime: 0.3
 --- !u!54 &48964614158193044
 Rigidbody:
   m_ObjectHideFlags: 0

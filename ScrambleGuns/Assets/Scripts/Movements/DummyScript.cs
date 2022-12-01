@@ -135,7 +135,7 @@ public class DummyScript : MonoBehaviour
         
         while (ammunition)
         {
-            yield return new WaitForSeconds(stats.fireRate);
+            yield return new WaitForSeconds(stats.fireRate + 1);
             Instantiate(Bullet, transform.position,transform.rotation);
             //yield return new WaitForSeconds(Random.Range(1.2f,2.7f));
         }///////////////////////////////////////////////////////
@@ -200,6 +200,7 @@ public class DummyScript : MonoBehaviour
 
     public IEnumerator DeathSequence()
     {
+        AnimHere.SetBool("IsDead",true);
         yield return new WaitForSeconds(.5f);
         Destroy(gameObject);
     }

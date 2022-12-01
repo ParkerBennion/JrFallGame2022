@@ -16,6 +16,6 @@ MonoBehaviour:
   isActive: 0
   canShoot: 0
   bulletFab: {fileID: 0}
-  fireRate: 0.2
+  fireRate: 1
   codex: 0100000002000000
   stopper: StopFront
