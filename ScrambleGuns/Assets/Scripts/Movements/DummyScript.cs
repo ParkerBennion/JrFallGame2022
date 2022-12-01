@@ -22,7 +22,7 @@ public class DummyScript : MonoBehaviour
     public Animator AnimHere;
 
 
-    public bool canBeShot = true;
+    public bool canBeShot = false;
 
     void Start()
     {
@@ -55,7 +55,6 @@ public class DummyScript : MonoBehaviour
             }
             case 2:
             {
-                Debug.Log("2");
                 ImmuneTillStop();
                 break;
             }
