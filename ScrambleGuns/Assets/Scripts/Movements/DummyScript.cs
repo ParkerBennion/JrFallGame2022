@@ -166,6 +166,7 @@ public class DummyScript : MonoBehaviour
         {
             
             StartCoroutine(moveDummyLeft());
+            StartCoroutine(DeathSequence());
         }
         
         for (int i = 0; i < InCoverTags.Length; i++)

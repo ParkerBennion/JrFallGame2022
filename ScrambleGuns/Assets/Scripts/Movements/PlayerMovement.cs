@@ -14,6 +14,8 @@ public class PlayerMovement : PawnMovements
     private IEnumerator downmove;
     public GameObject leftBound,rightBound;
     private bool left, right, up, down;
+    public BoxCollider Hitbox;
+    public GameObject diveButton;
     private void Awake()
     {
         fireTime = new WaitForSeconds(PawnAttributesSO.fireRate);
@@ -177,18 +179,28 @@ public class PlayerMovement : PawnMovements
     {
         if (context.performed)
         {
-            //rb.transform.position = Vector3.left*2;
-            rb.transform.Translate(Vector3.left);
-            //Debug.Log("diveLeft");
+            Hitbox.enabled = false;
+            diveButton.SetActive(false);
+            rb.transform.Translate(Vector3.right);
+            StartCoroutine(ReEnabelHitbox());
         }
     }
     public void DiveRight(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            //rb.transform.position = Vector3.right*2;
-            rb.transform.Translate(Vector3.right);
-            //Debug.Log("diveRight");
+            Hitbox.enabled = false;
+            diveButton.SetActive(false);
+            rb.transform.Translate(Vector3.left);
+            StartCoroutine(ReEnabelHitbox());
         }
+    }
+
+    private IEnumerator ReEnabelHitbox()
+    {
+        yield return new WaitForSeconds(.5f);
+        Hitbox.enabled = true;
+        yield return new WaitForSeconds(2);
+        diveButton.SetActive(true);
     }
 }

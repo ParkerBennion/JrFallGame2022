@@ -8,10 +8,10 @@ public class WaveManager : MonoBehaviour
     private Vector3[] locations;
     
     public GameObject[] enemyPrefab;
-    
-    public WaitForSeconds TimerShort;
-    public WaitForSeconds TimerMed;
-    public WaitForSeconds TimerLong;
+
+    private WaitForSeconds TimerShort;
+    private WaitForSeconds TimerMed;
+    private WaitForSeconds TimerLong;
     private int switcher = 0;
     
 
@@ -24,6 +24,10 @@ public class WaveManager : MonoBehaviour
             locations = new Vector3[spawnPositions.Length];
     }
 
+    public void StartSequence()
+    {
+        StartCoroutine(SpawnOneSequence());
+    }
     //grabs vecor 3 cordnats for all object positions
      private void Start()
      {
@@ -37,28 +41,19 @@ public class WaveManager : MonoBehaviour
          StartCoroutine(SpawnOneSequence());
          SwitchSpawnSequence(100);
      }
-     
-     
-     public void SwitchSpawnSequence(int commandToRun)
+
+
+     private void SwitchSpawnSequence(int commandToRun)
      {
          switch (commandToRun)
          {
              case 100:
              {
-                 //TestAllPoints
-                 enemyPrefab[0].transform.position = locations[0];
-                 Instantiate(enemyPrefab[0]);
-                 enemyPrefab[1].transform.position = locations[1];
-                 Instantiate(enemyPrefab[1]);
-                 enemyPrefab[2].transform.position = locations[2];
-                 Instantiate(enemyPrefab[2]);
-                 enemyPrefab[0].transform.position = locations[3];
-                 Instantiate(enemyPrefab[0]);
-                 enemyPrefab[1].transform.position = locations[4];
-                 Instantiate(enemyPrefab[1]);
-                 enemyPrefab[2].transform.position = locations[5];
-                 Instantiate(enemyPrefab[2]);
-                 //Debug.Log("1");
+                 for (int i = 0; i < locations.Length; i++)
+                 {
+                     enemyPrefab[0].transform.position = locations[i];
+                     Instantiate(enemyPrefab[0]);
+                 }
                  break;
              }
              case 0:
@@ -81,9 +76,6 @@ public class WaveManager : MonoBehaviour
              }
              case 3:
              {
-                 enemyPrefab[2].transform.position = locations[2];
-                 Instantiate(enemyPrefab[2]);
-                 
                  break;
              }
              case 4:

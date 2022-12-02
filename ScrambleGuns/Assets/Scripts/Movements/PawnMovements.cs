@@ -59,10 +59,11 @@ public class PawnMovements : MonoBehaviour
     {
         while (moveTrue)
         {
-            if (!shootToStopMove)
+            rb.MovePosition(transform.position + Vector3.left * (PawnAttributesSO.speed * Time.deltaTime));
+            /*if (!shootToStopMove)
             {
                 rb.MovePosition(transform.position + Vector3.left * (PawnAttributesSO.speed * Time.deltaTime));
-            }
+            }*/
             yield return waitFixed;
         }
     }
@@ -71,10 +72,11 @@ public class PawnMovements : MonoBehaviour
     {
         while (moveTrue)
         {
-            if (!shootToStopMove)
+            rb.MovePosition(transform.position + Vector3.right * (PawnAttributesSO.speed * Time.deltaTime));
+            /*if (!shootToStopMove)
             {
                 rb.MovePosition(transform.position + Vector3.right * (PawnAttributesSO.speed * Time.deltaTime));
-            }
+            }*/
             yield return waitFixed;
         }
     }

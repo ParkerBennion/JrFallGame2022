@@ -28,7 +28,7 @@ public class BulletEnemy : MonoBehaviour
         Timer = new WaitForSeconds(destroyTime);
         positionNow = endPosition.position;
         randX = Random.Range(-.5f, .5f);
-        randY = Random.Range(-1f, 1f);
+        randY = Random.Range(-1.8f, 2f);
 
         positionNow.x += randX;
         positionNow.y += randY;
