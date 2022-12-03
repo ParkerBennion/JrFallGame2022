@@ -7,11 +7,17 @@ public class WaveManager : MonoBehaviour
     public GameObject[] spawnPositions;
     private Vector3[] locations;
     
-    public GameObject[] enemyPrefab;
+    public GameObject[] enemyFrontPrefabs;
+    public GameObject[] enemyBackPrefabs;
+
+    private int difficulty;
+    private int quantity;
+    private int iteration;
 
     private WaitForSeconds TimerShort;
     private WaitForSeconds TimerMed;
     private WaitForSeconds TimerLong;
+    
     private int switcher = 0;
     
 
@@ -19,14 +25,9 @@ public class WaveManager : MonoBehaviour
     {
         TimerLong = new WaitForSeconds(5);
         TimerMed = new WaitForSeconds(2);
-        TimerShort = new WaitForSeconds(1);
+        TimerShort = new WaitForSeconds(.5f);
         
             locations = new Vector3[spawnPositions.Length];
-    }
-
-    public void StartSequence()
-    {
-        StartCoroutine(SpawnOneSequence());
     }
     //grabs vecor 3 cordnats for all object positions
      private void Start()
@@ -37,50 +38,56 @@ public class WaveManager : MonoBehaviour
              //Debug.Log(locations[i]);
          }
 
-         //StartCoroutine(TestingAllSpawns());
+         difficulty = 0;
+         quantity = 1;
+         iteration = 0;
+         StartCoroutine(StartCountdown());
+     }
+     public void StartSequence()
+     {
+         StartCoroutine(StartCountdown());
+     }
+     
+     
+     
+     private IEnumerator StartCountdown()
+     {
+         yield return TimerMed;
          StartCoroutine(SpawnOneSequence());
-         SwitchSpawnSequence(100);
+     }
+     IEnumerator SpawnOneSequence()
+     {
+         bool SequenceGo = true;
+         while (SequenceGo)
+         {
+             SwitchSpawnSequence(switcher);
+             switcher += 1;
+             yield return TimerLong;
+         }
      }
 
+     
 
      private void SwitchSpawnSequence(int commandToRun)
      {
          switch (commandToRun)
          {
-             case 100:
-             {
-                 for (int i = 0; i < locations.Length; i++)
-                 {
-                     enemyPrefab[0].transform.position = locations[i];
-                     Instantiate(enemyPrefab[0]);
-                 }
-                 break;
-             }
              case 0:
              {
-                 Debug.Log("spawning initialized");
+                 StartCoroutine(SpawnIntervalFront(quantity));
                  break;
              }
              case 1:
              {
-                 Debug.Log("Spawn start");
-                 enemyPrefab[0].transform.position = locations[0];
-                 Instantiate(enemyPrefab[0]);
+                 StartCoroutine(SpawnIntervalBack(quantity));
                  break;
              }
              case 2:
              {
-                 enemyPrefab[1].transform.position = locations[1];
-                 Instantiate(enemyPrefab[1]);
-                 break;
-             }
-             case 3:
-             {
-                 break;
-             }
-             case 4:
-             {
-                 Debug.Log("resetting sequence");
+                 StartCoroutine(SpawnIntervalFront(quantity));
+                 StartCoroutine(SpawnIntervalBack(quantity));
+                 Debug.Log(difficulty);
+                 Debug.Log(quantity);
                  break;
              }
              default:
@@ -91,43 +98,41 @@ public class WaveManager : MonoBehaviour
              }
          }
      }
-     
 
-     IEnumerator TestingAllSpawns()
+     IEnumerator SpawnIntervalFront(int times)
      {
-         for (int i = 0; i < spawnPositions.Length; i++)
+         for (int i = 0; i < times + iteration; i++)
          {
-             enemyPrefab[i].transform.position = locations[i];
-             Instantiate(enemyPrefab[i]);
-         }
-      
-         yield break;
-     }
-     /*IEnumerator SpawnOnlyFront()
-     {
-         while (true)
-         {
-             enemyPrefab[0].transform.position = locations[0];
-             Instantiate(enemyPrefab[0]);
+             GameObject tempEnemy = enemyFrontPrefabs[Random.Range(0, difficulty+1)]; 
+             tempEnemy.transform.position = locations[Random.Range(0,2)];
+             Instantiate(tempEnemy);
              yield return TimerShort;
          }
-      
-         yield break;
-     }*/
-     
-
-
-     IEnumerator SpawnOneSequence()
-     {
-         bool SequenceGo = true;
-         while (SequenceGo)
+         quantity++;
+         
+         if (quantity > 3)
          {
-             SwitchSpawnSequence(switcher);
-             switcher += 1;
-             yield return TimerLong;
+             quantity = 1;
+             iteration++;
+             difficulty++;
+             
+             if (difficulty > enemyFrontPrefabs.Length)
+             {
+                 difficulty = enemyFrontPrefabs.Length;
+             }
          }
-
-
      }
+     IEnumerator SpawnIntervalBack(int times)
+     {
+         for (int i = 0; i < times + iteration; i++)
+         {
+             GameObject tempEnemy = enemyBackPrefabs[Random.Range(0, difficulty+1)]; 
+             tempEnemy.transform.position = locations[Random.Range(2,4)];
+             Instantiate(tempEnemy);
+             yield return TimerShort;
+         }
+     }
+
+     
 
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5009091799738508550}
   - component: {fileID: 5565019393546972064}
   m_Layer: 0
-  m_Name: DUMMY Front
+  m_Name: FrontLV2
   m_TagString: FrontEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316107811980915881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.203966, y: -1.6665325, z: 10}
+  m_LocalPosition: {x: 15.796033, y: -1.6665325, z: 10}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 823675179, guid: 42e5ac17e03bece419a24d9a26dbb115, type: 3}
-  m_Color: {r: 0.6226415, g: 0.31425774, b: 0.61473423, a: 1}
+  m_Color: {r: 0.6509434, g: 0.20572266, b: 0.41987956, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   timer: 1
   leftRight: 0
   Bullet: {fileID: 6471584809109050426, guid: 8f067aaaaea56c540a287c87ec1119aa, type: 3}
-  stats: {fileID: 11400000, guid: 4a929b72b6b03f64cbf081cb51e2fb7f, type: 2}
+  stats: {fileID: 11400000, guid: c15c225c93b96064f9aaaf62ada30562, type: 2}
   thisCollider: {fileID: 1316107811980915885}
   InCoverTags: []
   OnDeath:

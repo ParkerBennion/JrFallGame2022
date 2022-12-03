@@ -849,7 +849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196449575}
   m_LocalRotation: {x: 1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.976411, y: 3.8572404, z: 10}
+  m_LocalPosition: {x: 10.56, y: -0.7, z: 10}
   m_LocalScale: {x: 0.5227, y: 2.0908, z: 0.5227}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1158,7 +1158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340311360}
   m_LocalRotation: {x: 1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.044345, y: 3.8572404, z: 10}
+  m_LocalPosition: {x: -10.51, y: -0.1, z: 10}
   m_LocalScale: {x: 0.5227, y: 2.0908, z: 0.5227}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1935,7 +1935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853299437}
   m_LocalRotation: {x: -1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.9469833, y: -0.3287047, z: -15.726371}
+  m_LocalPosition: {x: -1.2504307, y: -0.32871437, z: -15.726371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2123,7 +2123,7 @@ GameObject:
   - component: {fileID: 925187343}
   - component: {fileID: 925187342}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Life1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2683,13 +2683,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPositions:
-  - {fileID: 1665934438}
+  - {fileID: 2026974319}
   - {fileID: 108458011}
   - {fileID: 1303463902}
-  - {fileID: 2026974319}
-  enemyPrefab:
-  - {fileID: 1316107811980915881, guid: 81f2d535b2ed73541851e06c9b98c82b, type: 3}
+  - {fileID: 1665934438}
+  enemyFrontPrefabs:
   - {fileID: 1316107811980915881, guid: 2c7a50791abcd124d9db2c6f9322cd44, type: 3}
+  - {fileID: 1316107811980915881, guid: 4e4ba9f02c7092f4db54d0c50082b2de, type: 3}
+  - {fileID: 1316107811980915881, guid: daf22f962a81b084c838d56053b60ff3, type: 3}
+  enemyBackPrefabs:
+  - {fileID: 1316107811980915881, guid: 81f2d535b2ed73541851e06c9b98c82b, type: 3}
+  - {fileID: 1316107811980915881, guid: 592d73badea595c429ee1f0494da28ba, type: 3}
+  - {fileID: 1316107811980915881, guid: 211c0d7cc4804e844b80e8b3627fa6a3, type: 3}
 --- !u!1 &1107517158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,7 +3262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115757375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.54, y: -2.73, z: 2.241}
+  m_LocalPosition: {x: 0.6, y: -2.73, z: 2.241}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4087,7 +4092,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1117215, y: 1}
+    m_SensorSize: {x: 2.1098096, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4104,7 +4109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359239428}
   m_LocalRotation: {x: -1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.39043, y: -0.32871437, z: -15.726371}
+  m_LocalPosition: {x: -1.2504307, y: -0.32871437, z: -15.726371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5027,7 +5032,7 @@ GameObject:
   - component: {fileID: 1821528762}
   - component: {fileID: 1821528761}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Life2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
