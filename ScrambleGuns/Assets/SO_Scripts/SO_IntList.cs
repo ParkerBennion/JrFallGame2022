@@ -35,5 +35,9 @@ public class SO_IntList : ScriptableObject
         lastInt = lastAddedInt.transform.GetHashCode();
         //Debug.Log(lastAddedInt.transform.GetHashCode() + "is the last added int");
     }
+    public void AddIntLastInt(int thisInt)
+    {
+        lastInt += thisInt;
+    }
 
 }

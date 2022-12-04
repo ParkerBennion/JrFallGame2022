@@ -9,6 +9,7 @@ public class Counter : MonoBehaviour
     public int time;
     private float ActualTime;
     private WaitForSeconds oneSec;
+    public SO_IntList points;
     void Start()
     {
         ActualTime = Time.time;
@@ -16,6 +17,7 @@ public class Counter : MonoBehaviour
         oneSec = new WaitForSeconds(1);
         TimerText.text = "0";
         StartCoroutine(StartTimer());
+        points.lastInt = 0;
     }
 
     IEnumerator StartTimer()
@@ -23,6 +25,7 @@ public class Counter : MonoBehaviour
         while (gamePlay)
         {
             time++;
+            //time += points.lastInt;
             yield return oneSec;
             TimerText.text = time.ToString();
         }

@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 219916041}
   - component: {fileID: 219916046}
   - component: {fileID: 219916045}
+  - component: {fileID: 219916047}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -267,6 +268,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219916040}
   m_CullTransparentMesh: 1
+--- !u!114 &219916047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219916040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee69475ae5cbd34f8cc851b72d6d80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startBehaviour:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1218406939}
+        m_TargetAssemblyTypeName: TextUpdater, Assembly-CSharp
+        m_MethodName: RefreshText
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 87bd845f9cb16094eb823a4f9ae7b53d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: So_HighScore, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  awakeBehaviour:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerBehaviour:
+    m_PersistentCalls:
+      m_Calls: []
+  runBehaviour:
+    m_PersistentCalls:
+      m_Calls: []
+  disableBehaviour:
+    m_PersistentCalls:
+      m_Calls: []
+  destroyBehaviour:
+    m_PersistentCalls:
+      m_Calls: []
+  quitBehaviour:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &222792587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1078,7 @@ GameObject:
   - component: {fileID: 1218406936}
   - component: {fileID: 1218406938}
   - component: {fileID: 1218406937}
+  - component: {fileID: 1218406939}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1156,6 +1203,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218406935}
   m_CullTransparentMesh: 1
+--- !u!114 &1218406939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218406935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d541acccb5580940bd0001795819978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1218406937}
+  preString: 
+  postString: 
 --- !u!1 &1553981149
 GameObject:
   m_ObjectHideFlags: 0
